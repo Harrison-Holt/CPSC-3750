@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Displaying Keypresses</title>
+    <link rel="stylesheet" type="text/css" href="AllPagesCSS.css">
+    <style>
+        body {
+            background-color: #F6BD60;
+        }
+
+        #keys {
+            margin-top: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        function displayKey(e) {
+            // Which key was pressed?
+            var keycode;
+            if (e.keyCode) {
+                keycode = e.keyCode;
+            } else {
+                keycode = e.which;
+            }
+            var character = String.fromCharCode(keycode);
+
+            // Find the object for the destination paragraph
+            var keysParagraph = document.getElementById('keys');
+
+            // Add the character to the paragraph
+            keysParagraph.innerHTML += character;
+
+            // Perform actions based on the pressed key
+            if (/[aeiou]/i.test(character)) {
+                // Vowel pressed, force it to uppercase
+                keysParagraph.innerHTML = keysParagraph.innerHTML.toUpperCase();
+            } else if (character.toLowerCase() === 'r') {
+                // R (or r) pressed, change page to red background with white text
+                document.body.style.backgroundColor = 'red';
+                document.body.style.color = 'white';
+            } else if (character.toLowerCase() === 'g') {
+                // G (or g) pressed, change page to green background with white text
+                document.body.style.backgroundColor = 'green';
+                document.body.style.color = 'white';
+            } else if (character.toLowerCase() === 'b') {
+                // B (or b) pressed, change page to blue background with white text
+                document.body.style.backgroundColor = 'blue';
+                document.body.style.color = 'white';
+            }
+        }
+    </script>
+</head>
+<body class="body">
+    <nav>
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../142389/MoveButton.html">Moving Button</a></li>
+            <li><a href="../678297/chapter04.html">Button Changer</a></li>
+            <li><a href="../569812/sorting.html">Sorting</a></li>
+            <li><a href="../678297/NapoleonEarlyLife.html">Napoleon</a></li>
+            <li><a href="../483385/keypress.html">Key press</a></li>
+            <li><a href="../963743/cards.html">Business cards</a></li>
+            <li><a href="../568689/prime.html">Prime Numbers</a></li>
+        </ul>
+    </nav>
+    <h1>Displaying Typed Characters</h1>
+    <p>This document includes a simple script that displays the keys you type as a new paragraph below. Type a few keys to try it.</p>
+    <div id="keys"></div>
+
+    <nav>
+        <ul>
+            <li><a href="keypress.html">KeyPress Demo</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.body.onkeypress = displayKey;
+    </script>
+</body>
+</html>
