@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="AllPagesCSS.css">
+  <title>Button Color Changer</title>
+  <style>
+    body {
+      background-color: white;
+    }
+    button {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    #red {
+      background-color: red;
+    }
+    #green {
+      background-color: green;
+    }
+    #blue {
+      background-color: blue;
+    }
+    .count {
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../142389/MoveButton.html">Moving Button</a></li>
+      <li><a href="../678297/chapter04.html">Button Changer</a></li>
+      <li><a href="../569812/sorting.html">Sorting</a></li>
+      <li><a href="../678297/NapoleonEarlyLife.html">Napoleon</a></li>
+      <li><a href="../483385/keypress.html">Key press</a></li>
+      <li><a href="../963743/cards.html">Business cards</a></li>
+      <li><a href="../568689/prime.html">Prime Numbers</a></li>
+    </ul>
+  </nav>
+  <button id="red">RED</button>
+  <button id="green">GREEN</button>
+  <button id="blue">BLUE</button>
+  <div id="counters">
+    <div style="color: grey" id="red-count"><b>RED count: 0</b></div>
+    <div style="color: grey" id="green-count"><b>GREEN count: 0</b></div>
+    <div style="color: violet" id="blue-count"><b>BLUE count: 0</b></div>
+    <div style="color: violet" id="color-change-count"><b>Color change count: 0</b></div>
+  </div>
+  <script>
+    const redButton = document.getElementById('red');
+    const greenButton = document.getElementById('green');
+    const blueButton = document.getElementById('blue');
+    const redCount = document.getElementById('red-count');
+    const greenCount = document.getElementById('green-count');
+    const blueCount = document.getElementById('blue-count');
+    const colorChangeCount = document.getElementById('color-change-count');
+    let redCounter = 0;
+    let greenCounter = 0;
+    let blueCounter = 0;
+    let changeCounter = 0;
+    function changeColor(button, color) {
+      button.style.backgroundColor = color;
+      button.style.color = (color === 'black') ? 'white' : 'black';
+    }
+    function updateCounter(countElement, counter) {
+      countElement.textContent = countElement.id + ' ' + counter;
+    }
+    redButton.addEventListener('click', function() {
+      document.body.style.backgroundColor = 'red';
+      redCounter++;
+      updateCounter(redCount, redCounter);
+    });
+    greenButton.addEventListener('click', function() {
+      document.body.style.backgroundColor = 'green';
+      greenCounter++;
+      updateCounter(greenCount, greenCounter);
+    });
+    blueButton.addEventListener('click', function() {
+      document.body.style.backgroundColor = 'blue';
+      blueCounter++;
+      updateCounter(blueCount, blueCounter);
+    });
+    redButton.addEventListener('mouseover', function() {
+      changeColor(redButton, 'white');
+      changeCounter++;
+      updateCounter(colorChangeCount, changeCounter);
+    });
+    redButton.addEventListener('mouseout', function() {
+      changeColor(redButton, 'black');
+    });
+    greenButton.addEventListener('mouseover', function() {
+      changeColor(greenButton, 'white');
+      changeCounter++;
+      updateCounter(colorChangeCount, changeCounter);
+    });
+    greenButton.addEventListener('mouseout', function() {
+      changeColor(greenButton, 'black');
+    });
+    blueButton.addEventListener('mouseover', function() {
+      changeColor(blueButton, 'white');
+      changeCounter++;
+      updateCounter(colorChangeCount, changeCounter);
+    });
+    blueButton.addEventListener('mouseout', function() {
+      changeColor(blueButton, 'black');
+    });
+  </script>
+</body>
+</html>
