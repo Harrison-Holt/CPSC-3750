@@ -1,0 +1,71 @@
+body {
+    background-color: #D3D3D3;
+    background-size: cover;
+}
+
+img.one {
+    height: 25%;
+    width: 25%;
+}
+
+img.second {
+    height: 15%;
+    width: 15%;
+}
+
+h1 {
+    text-align: center;
+    color: navy;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    border-style: dotted;
+    text-align: center;
+    color: navy;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 10px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form input[type="text"],
+.search-form button {
+    padding: 8px;
+    border: none;
+}
+
+.search-form input[type="text"] {
+    border-radius: 3px 0 0 3px;
+}
+
+.search-form button {
+    background-color: #555;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
